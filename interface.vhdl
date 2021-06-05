@@ -2,13 +2,12 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity interface is 
-	Port( 
-			SW 	   : in STD_LOGIC_VECTOR(16 downto 0); -- 16 até 1 é o vetor e 0 é a op
-			KEY		: in STD_LOGIC_VECTOR(2 downto 0);-- 2 - set A, 1 - set B, 0 - reset
-			CLOCK_50 : in STD_LOGIC;
-			HEX0, HEX1, HEX2, HEX3:	out STD_LOGIC_VECTOR(6 downto 0); 
-			HEX4, HEX5, HEX6, HEX7: out STD_LOGIC_VECTOR(6 downto 0);
-			LEDG		: out STD_LOGIC_VECTOR(1 downto 0));
+	Port(SW 	           : in STD_LOGIC_VECTOR(16 downto 0); -- 16 até 1 é o vetor e 0 é a op
+	     KEY		   : in STD_LOGIC_VECTOR(2 downto 0);-- 2 - set A, 1 - set B, 0 - reset
+	     CLOCK_50              : in STD_LOGIC;
+	     HEX0, HEX1, HEX2, HEX3:	out STD_LOGIC_VECTOR(6 downto 0); 
+	     HEX4, HEX5, HEX6, HEX7: out STD_LOGIC_VECTOR(6 downto 0);
+	     LEDG		   : out STD_LOGIC_VECTOR(1 downto 0));
 end interface;
 
 architecture Behavioral of interface is 
@@ -17,18 +16,18 @@ signal alg1, alg2, alg3, alg4, alg5, alg6, alg7, alg8: STD_LOGIC_VECTOR(3 downto
 signal mostra: STD_LOGIC_VECTOR(31 downto 0);
 
 component softwareFinal is
-	Port ( inputVector	: in STD_LOGIC_VECTOR(15 downto 0);
-			 inputOp			: in STD_LOGIC_VECTOR(0 downto 0);
-			 inputButtons	: in STD_LOGIC_VECTOR(2 downto 0);
-			 inputClk		: in STD_LOGIC;
-			 outputHex		: out STD_LOGIC_VECTOR(31 downto 0);
-			 outputLed		: out STD_LOGIC_VECTOR(1 downto 0));
+	Port (inputVector : in STD_LOGIC_VECTOR(15 downto 0);
+	      inputOp     : in STD_LOGIC_VECTOR(0 downto 0);
+	      inputButtons: in STD_LOGIC_VECTOR(2 downto 0);
+	      inputClk	  : in STD_LOGIC;
+              outputHex	  : out STD_LOGIC_VECTOR(31 downto 0);
+	      outputLed	  : out STD_LOGIC_VECTOR(1 downto 0));
 
 end component;
 
 component hex7display is
-    Port ( A : in  STD_LOGIC_VECTOR (3 downto 0);
-          seg7 : out  STD_LOGIC_VECTOR (6 downto 0)
+    Port (A   : in  STD_LOGIC_VECTOR (3 downto 0);
+          seg7: out  STD_LOGIC_VECTOR (6 downto 0)
              );
 end component;
 
