@@ -51,7 +51,5 @@ Soma3: component somaAlgarismo port map(alg3A, alg3B, c4, alg3S, c3);
 Soma2: component somaAlgarismo port map(alg2A, alg2B, c3, alg2S, c2);
 Soma1: component somaAlgarismo port map(alg1A, alg1B, c2, alg1S, c1);  -- Por último a soma do mais significativo, o carry out será ignorado
 
-S8 <= alg1S & alg2S & alg3S & alg4S & alg5S & alg6S & alg7S & alg8S;
-
-	
+S8 <= alg1S & alg2S & alg3S & alg4S & alg5S & alg6S & alg7S & alg8S;	
 end Behavioral;
