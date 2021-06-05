@@ -23,15 +23,15 @@ signal c1,c2,c3,c4: STD_LOGIC;
 signal alg1A, alg2A, alg3A, alg4A, alg1B, alg2B, alg3B, alg4B, alg1S, alg2S, alg3S, alg4S: STD_LOGIC_VECTOR(3 downto 0);
 begin
 
-alg1A <= A4(15 downto 12);	
+alg1A <= A4(15 downto 12);  -- Mais significativo	
 alg2A <= A4(11 downto 8);
 alg3A <= A4(7 downto 4);
-alg4A <= A4(3 downto 0);
+alg4A <= A4(3 downto 0);  -- Menos significativo
 
-alg1B <= B4(15 downto 12);	
+alg1B <= B4(15 downto 12);  -- Mais significativo	
 alg2B <= B4(11 downto 8);
 alg3B <= B4(7 downto 4);
-alg4B <= B4(3 downto 0);
+alg4B <= B4(3 downto 0); -- Menos significativo
 
 Soma4: component somaAlgarismo port map(alg4A, alg4B, '0', alg4S, c4);
 Soma3: component somaAlgarismo port map(alg3A, alg3B, c4, alg3S, c3);
