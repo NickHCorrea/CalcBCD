@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity calcBCD is
 	Port(
 			A,B	: in STD_LOGIC_VECTOR( 15 downto 0);
-			op		: in STD_LOGIC;
+			op		: in STD_LOGIC_VECTOR(0 downto 0);
 			Saida : out STD_LOGIC_VECTOR( 31 downto 0));
 end calcBCD;
 
@@ -41,7 +41,7 @@ begin
 	end process;
 	process(op)
 	begin
-	if (op = '0') then
+	if (op = "0") then
 	Saida <= resSoma32;
 	else
 	Saida <= resMult;
