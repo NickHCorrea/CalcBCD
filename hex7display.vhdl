@@ -2,16 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity hex7display is
-    Port ( A : in  STD_LOGIC_VECTOR (3 downto 0);
-          seg7 : out  STD_LOGIC_VECTOR (6 downto 0)
+    Port ( A  : in  STD_LOGIC_VECTOR (3 downto 0);
+          seg7: out  STD_LOGIC_VECTOR (6 downto 0)
              );
 end hex7display;
 
 architecture Behavioral of hex7display is
 signal seg: STD_LOGIC_VECTOR(6 downto 0);
 begin
-
---'a' corresponds to MSB of seg7 and 'g' corresponds to LSB of seg7.
+	
 process (A)
 BEGIN
     case A is
@@ -25,10 +24,10 @@ BEGIN
         when "0111"=> seg <="1111000";  -- '7'
         when "1000"=> seg <="0000000";  -- '8'
         when "1001"=> seg <="0011000";  -- '9'
-		  when others =>  seg <= "1111111";
+	when others =>  seg <= "1111111"; -- tudo apagado
     end case;
 end process;
 
-		seg7 <= seg;
+seg7 <= seg;
 		
 end Behavioral;
