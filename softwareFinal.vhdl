@@ -1,6 +1,5 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
 entity softwareFinal is
 	Port (inputVector : in STD_LOGIC_VECTOR(15 downto 0);
 	      inputOp	  : in STD_LOGIC_VECTOR(0 downto 0);
@@ -56,5 +55,4 @@ begin
 			outputHex <= x"0000" & inputVector;
 		end if;
 	end process;
-	
 end Behavioral;
